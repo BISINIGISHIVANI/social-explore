@@ -1,0 +1,27 @@
+.error-page-container{
+     display: grid;
+}
+.error-img{
+    width:95vw;
+    height: 100vh;
+}
+.card-grid{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.align-md{
+   display: flex;
+   flex-direction: column;
+   align-self: flex-end;
+   justify-content: center;
+}
+.button-md{
+    border: 2px solid var(--primaryColor);
+    padding: 1rem;
+    margin: 1rem;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    background-color: var(--primary-color);
+}
