@@ -1,0 +1,81 @@
+.width-md {
+  width: 68.5%;
+  margin: 2rem auto;
+}
+.login-img {
+  width: 19rem;
+  height: auto;
+}
+.login {
+  width: 20rem;
+  padding: 4rem 0 0;
+  margin: 0 auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  border-radius: 10px;
+  max-width: 20rem;
+  text-align: center;
+  padding: 2rem;
+}
+.border-none {
+  outline: 0;
+  border: 0;
+}
+.form input {
+  background: #f2f2f2;
+  padding: 1rem;
+}
+.form .login-input,
+.form .login-password {
+  width: 100%;
+}
+.form input,
+.form button {
+  width: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+}
+.form input:focus {
+  background: #dbdbdb;
+}
+
+.form .primary-btn {
+  text-transform: uppercase;
+  background: #4b6cb7;
+  padding: 1.2rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+.form .secondary-btn {
+  text-transform: uppercase;
+  background: #fff;
+  padding: 1.2rem;
+  color: var(--mainBlack);
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+}
+.password-container {
+  background-color: var(--gray);
+}
+.eye-icon {
+  color: var(--primary-color);
+  padding: 1rem 0.1rem;
+  cursor: pointer;
+}
+
+.form .primary-btn:active {
+  background: #395591;
+}
+
+.form span {
+  color: #4b6cb7;
+}
+@media screen and (max-width: 450px) {
+  .width-md {
+    width: 100%;
+  }
+}
