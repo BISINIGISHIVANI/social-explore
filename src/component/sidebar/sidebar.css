@@ -1,0 +1,95 @@
+.sidebar {
+  position: sticky;
+  left: 0;
+  border-right: 2px solid var(--primary-color);
+  margin-right: 0.4rem;
+  width: fit-content;
+  height: 88vh;
+  font-family: "Comfortaa", cursive;
+}
+.sidebar-icons {
+  margin: 0 0.4rem;
+  height: 100%;
+}
+.mg-left-sm {
+  margin-left: 1rem;
+}
+.sidebar-icons span:hover {
+  background-color: rgb(125, 158, 190);
+}
+.sidebar-icons span {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.3rem 0;
+}
+.fa-bolt {
+  padding-right: 0.5rem;
+}
+.fa-bookmark {
+  padding-right: 0.3rem;
+}
+.fa-2x {
+  font-size: 1.8em;
+}
+.sidebar label {
+  font-size: 1.4em;
+}
+.post-btn {
+  border: 2px solid var(--primary-color);
+  border-radius: 2rem;
+  margin: 2rem 0;
+  padding: 0.4rem;
+  background-color: var(--primary-color);
+  text-transform: uppercase;
+}
+.post-btn:hover {
+  background-color: var(--mainWhite);
+}
+
+.padding-right-sm {
+  padding-right: 0.6rem;
+}
+.text-center {
+  text-align: center;
+}
+.fa-bolt:after {
+  margin-left: 1rem;
+}
+.sidebar-icons .fa {
+  font: normal normal normal 1.6rem/1 FontAwesome;
+}
+.fa:before,
+.fa:after {
+  margin: 0.4rem 0.8rem;
+}
+.mobile-sidebar {
+  display: none;
+}
+@media screen and (max-width: 550px) {
+  .sidebar,
+  .aside {
+    display: none;
+  }
+  .mobile-sidebar {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    border-top: 1px solid var(--primary-color);
+    padding: 0.5rem 0.4rem 0.4rem 0;
+    cursor: pointer;
+  }
+  .mobile-sidebar span {
+    color: var(--primary-color);
+    padding: 1rem 0 1rem 0;
+  }
+  .mobile-sidebar span:hover {
+    background-color: #3243;
+    border-radius: 50%;
+  }
+}
