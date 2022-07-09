@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { logoutUser } from "../../redux/features/auth/authSlice";
-
 import "./sidebar.css";
 const Sidebar = () => {
   const dispatch = useDispatch();
   const { user, token } = useSelector((state) => state.auth);
   const navigate = useNavigate();
+  const location=useLocation()
   const logoutHandler = () => {
     if (token) {
       dispatch(logoutUser(token));
@@ -20,22 +20,21 @@ const Sidebar = () => {
       <div className="sidebar cursor-pointer">
         <section className="flex-col gap sidebar-icons flex-space-between">
           <div className="flex-col">
-            <span className="decoration-none">
+            <span className={`decoration-none ${location?.pathname==="/home"? "sidebar-active":""}`}>
               <Link to="/home">
                 <i className="fa fa-home fa-2x"></i>
                 <label> Home</label>
               </Link>
             </span>
-            <span>
+            <span className={`decoration-none ${location?.pathname==="/explore"? "sidebar-active":""}`}>
               <i className="fa fa-bolt fa-2x"></i>
               <label> Explore</label>
             </span>
-            <span>
+            <span className={`decoration-none ${location?.pathname==="/bookmark"? "sidebar-active":""}`}>
               <i className="fa fa-bookmark fa-2x"></i>
               <label>Bookmark</label>
             </span>
-
-            <span>
+            <span className={`decoration-none ${location?.pathname==="/profile"? "sidebar-active":""}`}>
               <i className="fa fa-user-circle-o fa-2x"></i>
               <label> Profile</label>
             </span>

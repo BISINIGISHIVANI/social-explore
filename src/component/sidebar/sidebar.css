@@ -69,6 +69,11 @@
 .mobile-sidebar {
   display: none;
 }
+.sidebar-active{
+    width: -webkit-fill-available;
+    background-color:var(--primary-color);
+    color: var(--mainWhite);
+  }
 @media screen and (max-width: 550px) {
   .sidebar,
   .aside {
