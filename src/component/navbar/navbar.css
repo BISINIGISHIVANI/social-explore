@@ -131,7 +131,10 @@
 .dark-mode input,
 .dark-mode .navbar {
   background: none;
-  color: var(--mainWhite);
+  color: var(--primary-color);
+}
+.dark-mode .navbar{
+ background-color:#01070f;
 }
 @media screen and (max-width: 550px) {
   .navbar {
