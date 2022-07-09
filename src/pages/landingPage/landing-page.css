@@ -1,0 +1,47 @@
+.landing-section {
+  font-family: cursive;
+}
+.landing-page {
+  width: 30rem;
+  height: auto;
+}
+.align-middle {
+  width: 100vw;
+  margin: 0 auto;
+}
+.align-center {
+  justify-content: center;
+}
+.start-btn {
+  width: fit-content;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  border-radius: 0.4rem;
+  font-size: larger;
+  font-family: cursive;
+}
+.paragraph-sm {
+  width: 28ch;
+  line-height: 1.7rem;
+  font-size: 1.3rem;
+}
+.mg-left {
+  margin-left: 4.5rem;
+}
+.decoration-none a {
+  text-decoration: none;
+  color: inherit;
+}
+.landing-section .left-nav .search-bar,
+.landing-section .left-nav .fa-bars {
+  display: none;
+}
+.start-btn:hover {
+  border: 2px solid var(--primary-color);
+  background-color: var(--mainWhite);
+}
+@media screen and (max-width: 450px) {
+  .landing-page {
+    width: 15rem;
+  }
+}

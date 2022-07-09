@@ -1,0 +1,39 @@
+.banner-img {
+  width: 40%;
+  border: 1px solid var(--mainBlack);
+}
+.bd-left {
+  border-left: 2px solid var(--primary-color);
+  margin: 0 0.4rem;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  margin: 0.4rem;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(180, 168, 168);
+  background: #8d8383;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(27, 35, 76);
+  border-radius: 10px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #27365a;
+}
+.main-content {
+  width: 100%;
+  display: flex;
+}
+.content {
+  flex-grow: 2;
+  height: 85vh;
+  overflow-y: auto;
+  padding: 1rem;
+}
+.padding-edges {
+  padding: 0 1rem;
+}
