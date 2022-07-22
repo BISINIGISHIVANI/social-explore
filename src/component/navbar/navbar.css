@@ -120,12 +120,19 @@
   opacity: 1;
   visibility: visible;
 }
-.dark-mode,
 .dark-mode .fa-bars,
 .dark-mode .toggle-sidebar,
 .dark-mode .mobile-sidebar {
   color: var(--primary-color);
   background-color: #01070f;
+}
+.dark-mode,
+.dark-mode .post-card {
+  color: var(--mainWhite);
+  background-color: #01070f;
+}
+.dark-mode .post-card {
+  border: 2px solid var(--primary-color);
 }
 .dark-mode button:hover,
 .dark-mode input,
@@ -133,8 +140,8 @@
   background: none;
   color: var(--primary-color);
 }
-.dark-mode .navbar{
- background-color:#01070f;
+.dark-mode .navbar {
+  background-color: #01070f;
 }
 @media screen and (max-width: 550px) {
   .navbar {

@@ -7,7 +7,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const { user, token } = useSelector((state) => state.auth);
   const navigate = useNavigate();
-  const location=useLocation()
+  const location = useLocation();
   const logoutHandler = () => {
     if (token) {
       dispatch(logoutUser(token));
@@ -20,23 +20,43 @@ const Sidebar = () => {
       <div className="sidebar cursor-pointer">
         <section className="flex-col gap sidebar-icons flex-space-between">
           <div className="flex-col">
-            <span className={`decoration-none ${location?.pathname==="/home"? "sidebar-active":""}`}>
+            <span
+              className={`decoration-none ${
+                location?.pathname === "/home" ? "sidebar-active" : ""
+              }`}
+            >
               <Link to="/home">
                 <i className="fa fa-home fa-2x"></i>
                 <label> Home</label>
               </Link>
             </span>
-            <span className={`decoration-none ${location?.pathname==="/explore"? "sidebar-active":""}`}>
+            <span
+              className={`decoration-none ${
+                location?.pathname === "/explore" ? "sidebar-active" : ""
+              }`}
+            >
               <i className="fa fa-bolt fa-2x"></i>
               <label> Explore</label>
             </span>
-            <span className={`decoration-none ${location?.pathname==="/bookmark"? "sidebar-active":""}`}>
+            <span
+              className={`decoration-none ${
+                location?.pathname === "/bookmark" ? "sidebar-active" : ""
+              }`}
+            >
               <i className="fa fa-bookmark fa-2x"></i>
               <label>Bookmark</label>
             </span>
-            <span className={`decoration-none ${location?.pathname==="/profile"? "sidebar-active":""}`}>
-              <i className="fa fa-user-circle-o fa-2x"></i>
-              <label> Profile</label>
+            <span
+              className={`decoration-none ${
+                location?.pathname === `/profile/${user.username}`
+                  ? "sidebar-active"
+                  : ""
+              }`}
+            >
+              <Link to={`/profile/${user.username}`}>
+                <i className="fa fa-user-circle-o fa-2x"></i>
+                <label> Profile</label>
+              </Link>
             </span>
             <div>
               <button className="post-btn cursor-pointer">

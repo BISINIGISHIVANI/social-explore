@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { useEffect } from "react";
 const LoginPage = () => {
   const dispatch = useDispatch();
-  const { user, isLoading } = useSelector((state) => state.auth);
+  const { user, isLoading ,token} = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const location = useLocation();
   const [loginData, setloginData] = useState({
@@ -40,7 +40,6 @@ const LoginPage = () => {
     e.preventDefault();
     if (checkInputs()) {
       const res = dispatch(loginUser(loginData));
-      console.log(res)
       toast.success("successfully login ");
       if (res?.payload?.status === 200) {
         localStorage.getItem("user", JSON.stringify(res.payload.foundUser));
@@ -53,6 +52,11 @@ const LoginPage = () => {
       navigate(location?.state?.from?.pathname ?? "/", { replace: true });
     }
   },[navigate,user,location]);
+  useEffect(() => {
+    if (token && location?.pathname === "/") {
+      navigate("/home");
+    }
+  }, [token, navigate, location]);
   return (
     <div className="flex-row flex-wrap width-md">
       <img src={loginImg} alt="login-img" className="login-img " />
