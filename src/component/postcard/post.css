@@ -1,84 +1,108 @@
 .post-modal{
-    border: 1px solid var(--primary-color);
-    background-color: var(--gray);
-    height: 10rem;
-    border-radius: 1rem;
+  border: 1px solid var(--primary-color);
+  background-color: var(--gray);
+  height: 10rem;
+  border-radius: 1rem;
 }
 .textarea-post{
-    border: none;
-    resize: none;
-    outline: none;
-    padding: 0.5rem;
-    height: 100%;
-    background: transparent;
+  border: none;
+  resize: none;
+  outline: none;
+  padding: 0.5rem;
+  height: 100%;
+  background: transparent;
 }
 .post-modal-btn{
-    margin: 0;
-    color: var(--mainWhite);
+  margin: 0;
+  color: var(--mainWhite);
 }
 .post-modal-btn:hover{
-    color: var(--primary-color);
-    background-color: transparent;
+  color: var(--primary-color);
+  background-color: transparent;
 }
 .user-avatar{
-    border-radius: 50%;
+  border-radius: 50%;
 }
 .bd-remove{
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 .bd-btn input:focus-visible,.bd-btn button:focus-visible{
-    outline: 2px solid var(--primary-color);
-    border-radius: 2rem;
+  outline: 2px solid var(--primary-color);
+  border-radius: 2rem;
 }
 .btn-disable{
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 .padding-xl{
-    padding:0.5rem;
+  padding:0.5rem;
 }
 .width-lg{
-    width: 100%;
+  width: 100%;
 }
 .mg-xl{
-    margin:  0.8rem;
+  margin:  0.8rem;
 }
 .mg-top-xl{
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 .bd-radius-sm{
-    border-radius: 0.8rem;
+  border-radius: 0.8rem;
 }
 .input-bg{
-    background: transparent;
+  background: transparent;
 }
 .flex-center{
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .post-card{
-    background-color: var(--gray);
-    font-family: 'Courier New', Courier, monospace;
+  background-color: var(--gray);
+  font-family: 'Courier New', Courier, monospace;
 }
 .mg-left-sm{
-    margin-left: 2rem;
+  margin-left: 2rem;
 }
 .width-md{
-    width: 40rem;
+  width: 40rem;
 }
 .avatar-sm{
-    width:1.8rem;
-    height:1.8rem;
+  width:1.8rem;
+  height:1.8rem;
 }
 .align-item-center{
-    align-items: center;
+  align-items: center;
 }
 .mg-left-xl{
-    margin-left: 2.5rem;
+  margin-left: 2.5rem;
+}
+.width-xl{
+  width: 6rem;
+}
+.btn-secondary{
+  border: 1px solid var(--primary-color);
+  color: var(--mainBlack);
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+.comment-container{
+  background-color: #e7e9e9;
+  width: max-content;
+  padding: 0.5rem;
+}
+.file-input{
+width: 0.1px;
+height: 0.1px;
+opacity: 0;
+overflow: hidden;
+position: absolute;
+z-index: -1;
 }
 @media  (max-width:450px) {
-    .post-card{
-        width: 19rem;
-    }
+  .post-card{
+      width: 19rem;
+  }
 }
