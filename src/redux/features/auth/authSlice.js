@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUser, signupUser } from "../../asyncThunk/authThunk";
+import { loginUser, signupUser, editUser } from "../../asyncThunk/authThunk";
+import { followUser, unfollowUser } from "../../asyncThunk/userThunk";
 const initialState = {
-  user: null,
-  token: null,
+  user: JSON.parse(localStorage.getItem("socio-user")),
+  token: localStorage.getItem("socio-token"),
   isLoading: false,
   error: null
 };
@@ -14,8 +15,11 @@ const authSlice = createSlice({
     logoutUser: (state) => {
       state.user = "";
       state.token = "";
-      localStorage.removeItem("user");
-      localStorage.removeItem("token");
+      localStorage.removeItem("socio-user");
+      localStorage.removeItem("socio-token");
+    },
+    updateUser: (state, action) => {
+      state.user = action.payload;
     },
     setLoading: (state) => {
       state.isLoading = true;
@@ -46,8 +50,29 @@ const authSlice = createSlice({
     [signupUser.rejected]: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
+    },
+    [editUser.fulfilled]: (state, action) => {
+      state.isLoading = true;
+      state.user = action.payload.user;
+    },
+    [editUser.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+
+    [followUser.fulfilled]: (state, action) => {
+      state.user = action.payload.user;
+    },
+    [followUser.rejected]: (state, action) => {
+      state.error = action.payload;
+    },
+    [unfollowUser.fulfilled]: (state, action) => {
+      state.user = action.payload.user;
+    },
+    [unfollowUser.rejected]: (state, action) => {
+      state.error = action.payload;
     }
   }
 });
-export const { logoutUser, setLoading } = authSlice.actions;
+export const { logoutUser, updateUser, setLoading } = authSlice.actions;
 export const { reducer: authReducer } = authSlice;
