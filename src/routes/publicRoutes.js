@@ -4,7 +4,8 @@ import {
   ErrorPage,
   HomePage,
   LoginPage,
-  SignUpPage
+  SignUpPage,
+  ProfilePage
 } from "../pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,13 +23,21 @@ const PublicRoutes = () => {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/profile/:userName"
+          element={
+            <PrivateRoute>
+              <ProfilePage />
+            </PrivateRoute>
+          }
+        />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <ToastContainer
         position="top-right"
-        autoClose={3000}
+        autoClose={2500}
         hideProgressBar={true}
         newestOnTop={false}
         closeOnClick
