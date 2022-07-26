@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUser, signupUser } from "../../asyncThunk/authThunk";
+import { loginUser, signupUser } from "../asyncThunk/authThunk";
 const initialState = {
-  user: null,
-  token: null,
+  user: JSON.parse(localStorage.getItem("socio-user")),
+  token: localStorage.getItem("socio-token"),
   isLoading: false,
   error: null
 };
