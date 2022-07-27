@@ -127,6 +127,9 @@
   color: var(--primary-color);
   background-color: #01070f;
 }
+.dark-mode .post-card{
+  color: var(--mainBlack);
+}
 .dark-mode button:hover,
 .dark-mode input,
 .dark-mode .navbar {

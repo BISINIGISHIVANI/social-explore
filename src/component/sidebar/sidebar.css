@@ -8,7 +8,6 @@
   font-family: "Comfortaa", cursive;
 }
 .sidebar-icons {
-  margin: 0 0.4rem;
   height: 100%;
 }
 .mg-left-sm {
@@ -69,11 +68,11 @@
 .mobile-sidebar {
   display: none;
 }
-.sidebar-active{
-    width: -webkit-fill-available;
-    background-color:var(--primary-color);
-    color: var(--mainWhite);
-  }
+.sidebar-active {
+  width: -webkit-fill-available;
+  background-color: var(--primary-color);
+  color: var(--mainWhite);
+}
 @media screen and (max-width: 550px) {
   .sidebar,
   .aside {
