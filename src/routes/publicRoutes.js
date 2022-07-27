@@ -9,6 +9,9 @@ import {
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { PrivateRoute } from "./privateRoute";
+import { ExplorePage } from "../pages/explorePage/explorePage";
+import { PostModal } from "../component/postModal/postModal";
+
 const PublicRoutes = () => {
   return (
     <div>
@@ -19,6 +22,14 @@ const PublicRoutes = () => {
           element={
             <PrivateRoute>
               <HomePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/explore"
+          element={
+            <PrivateRoute>
+              <ExplorePage />
             </PrivateRoute>
           }
         />
@@ -37,6 +48,7 @@ const PublicRoutes = () => {
         draggable
         pauseOnHover
       />
+      <PostModal />
     </div>
   );
 };
