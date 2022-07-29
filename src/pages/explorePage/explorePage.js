@@ -2,6 +2,7 @@ import { Navbar, Sidebar, PostCard } from "../../component";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getPosts } from "../../redux/asyncThunk/postThunk";
+import { SuggestUser } from "../../component/suggestUser/suggestUsers";
 
 const ExplorePage = () => {
   const dispatch = useDispatch();
@@ -25,9 +26,7 @@ const ExplorePage = () => {
             </div>
           </section>
           <aside className="padding-edges aside">
-            <img src="" alt="" />
-            <h3>Mahabaratham</h3>
-            <button>Follow</button>
+           <SuggestUser/>
           </aside>
         </section>
       </div>
