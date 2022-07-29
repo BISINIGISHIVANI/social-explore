@@ -50,11 +50,13 @@ const Sidebar = () => {
             </span>
             <span
               className={`decoration-none ${
-                location?.pathname === "/profile" ? "sidebar-active" : ""
+                location?.pathname === `/profile/${user.username}` ? "sidebar-active" : ""
               }`}
             >
+              <Link to={`/profile/${user.username}`}>
               <i className="fa fa-user-circle-o fa-2x"></i>
               <label> Profile</label>
+              </Link>
             </span>
           </div>
           {user ? (

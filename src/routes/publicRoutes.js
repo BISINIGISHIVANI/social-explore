@@ -4,12 +4,13 @@ import {
   ErrorPage,
   HomePage,
   LoginPage,
-  SignUpPage
+  SignUpPage,
+  ProfilePage,
+  ExplorePage
 } from "../pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { PrivateRoute } from "./privateRoute";
-import { ExplorePage } from "../pages/explorePage/explorePage";
 import { PostModal } from "../component/postModal/postModal";
 
 const PublicRoutes = () => {
@@ -29,7 +30,15 @@ const PublicRoutes = () => {
           path="/explore"
           element={
             <PrivateRoute>
-              <ExplorePage />
+              <ExplorePage/>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile/:username"
+          element={
+            <PrivateRoute>
+              <ProfilePage/>
             </PrivateRoute>
           }
         />
