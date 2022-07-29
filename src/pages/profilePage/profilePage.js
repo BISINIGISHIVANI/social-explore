@@ -15,7 +15,6 @@ const ProfilePage=()=>{
     const {username}=useParams();
     const myposts = posts.filter((post) => post.username === username);
     const {
-      _id,
     firstName,
     lastName,
     followers,

@@ -77,19 +77,16 @@ const Sidebar = () => {
         </section>
       </div>
       <div className="mobile-sidebar flex-row flex-space-between">
-        <span>
+        <span onClick={()=>navigate("/home")}>
           <i className="fa fa-home fa-2x"></i>
         </span>
-        <span>
+        <span onClick={()=>navigate("/explore")}>
           <i className="fa fa-bolt fa-2x"></i>
         </span>
-        <span>
-          <i className="fa fa-plus-circle fa-2x"></i>
-        </span>
-        <span>
+        <span onClick={()=>navigate("/bookmark")}>
           <i className="fa fa-bookmark fa-2x"></i>
         </span>
-        <span>
+        <span onClick={()=>navigate(`/profile/${user.username}`)}>
           <i className="fa fa-user-circle-o fa-2x"></i>
         </span>
       </div>

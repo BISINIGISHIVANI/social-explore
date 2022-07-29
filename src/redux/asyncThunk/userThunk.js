@@ -20,7 +20,6 @@ async ({username},{rejectWithValue})=>{
   try {
     const {data}=await axios.get(`/api/users/${username}`)
     const {user}=data;
-     console.log(user)
     return user;
 
   } catch (error) {
@@ -52,7 +51,6 @@ const followUser=createAsyncThunk("user/followUser",
     {
       headers: { authorization: token },
     })
-    console.log(data)
     dispatch(updateUserFollwers(data.user))
     dispatch(editUser({userData:data.user,token}))
     return data;

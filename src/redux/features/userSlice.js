@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import { editUser, followUser, getAllUsers,unFollowUser } from "../asyncThunk/userThunk";
 const initialState = {
   users: [],
@@ -32,6 +33,7 @@ const userSlice = createSlice({
       state.users = [...state.users].map((user) =>
         user._id === followUser._id ? followUser : user
       );
+      toast.success(`following ${followUser.username}`)
     },
     [followUser.rejected]:(state,action)=>{
       state.error=action.payload;
