@@ -2,6 +2,7 @@ import "./navbar.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { SuggestUser } from "../suggestUser/suggestUsers";
 const Navbar = () => {
   const { user,token } = useSelector((state) => state.auth);
   const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +61,12 @@ const Navbar = () => {
             </div>
             <div className="margin-sm">
               {user ? (
+                <div>
                 <h3>hi,{user.firstName}</h3>
+                <div className="mobile-sidebar width-fitContent">
+                  <SuggestUser/>
+                </div>
+                </div>
               ) : (
                 <span>kindly Login for more information </span>
               )}

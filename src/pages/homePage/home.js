@@ -3,13 +3,23 @@ import { Navbar, Sidebar, PostCard, AddPost } from "../../component";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getPosts } from "../../redux/asyncThunk/postThunk";
+import { SuggestUser } from "../../component/suggestUser/suggestUsers";
 
 export const Home = () => {
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.posts);
   const reversePosts = [...posts].reverse();
   useEffect(() => {
-    dispatch(getPosts());
+  (async ()=>{
+      try {
+      const response=dispatch(getPosts());
+      if(response.error){
+        throw new Error("cant fetch posts")
+      }
+    } catch (error) {
+      console.error(error)
+    }
+    })()
   }, [dispatch]);
   return (
     <div>
@@ -28,9 +38,7 @@ export const Home = () => {
             </div>
           </section>
           <aside className=" padding-edges aside">
-            <img src="" alt="" />
-            <h3>Mahabaratham</h3>
-            <button>Follow</button>
+            <SuggestUser />
           </aside>
         </section>
       </div>
